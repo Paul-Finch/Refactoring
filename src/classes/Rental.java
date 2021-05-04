@@ -14,7 +14,7 @@ public class Rental {
         return movie;
     }
 
-    double getCharge() {
+    public double getCharge() {
         double total = 0;
         switch (getMovie().getPriceCode()) {
             case Movie.REGULAR:
