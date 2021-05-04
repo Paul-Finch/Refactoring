@@ -6,23 +6,23 @@ import java.util.*;
 public class Customer {
     private final String name;
     private final Vector<Rental> rentals = new Vector<>();
-    public Customer (String newname){
-        name = newname;
+    public Customer (String newName){
+        name = newName;
     }
-    public void addRental(Rental arg) {
-        rentals.addElement(arg);
+    public void addRental(Rental rental) {
+        rentals.addElement(rental);
     };
     public String getName (){
         return name;
     };
     public String statement() {
-        Enumeration<Rental> enum_rentals = rentals.elements();
+        Enumeration<Rental> enumeration = rentals.elements();
         StringBuilder result = new StringBuilder("classes.Rental Record for " + this.getName() + "\n");
         result.append("\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n");
 
-        while (enum_rentals.hasMoreElements()) {
+        while (enumeration.hasMoreElements()) {
             double total;
-            Rental rental = enum_rentals.nextElement();
+            Rental rental = enumeration.nextElement();
             //determine amounts for rental line
             total = rental.getCharge();
             // add frequent renter points
